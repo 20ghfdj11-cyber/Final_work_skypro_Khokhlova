@@ -26,7 +26,7 @@ def browser():
     '"поиск: Девчата • результаты: 30"'
 )
 @allure.severity("Blocker")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_search_movie__main_page(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -52,7 +52,7 @@ def test_search_movie__main_page(browser):
     '"К сожалению, по вашему запросу ничего не найдено..."'
 )
 @allure.severity("Minor")
-# @pytest.mark.negative_test
+@pytest.mark.negative_test
 def test_negative_1_search(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -78,7 +78,7 @@ def test_negative_1_search(browser):
     "убедиться, что результат поиска соответствует ожиданиям"
 )
 @allure.severity("Critical")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_positive_2_search(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -103,7 +103,7 @@ def test_positive_2_search(browser):
 @allure.title('Проверка активности кнопки "Смотреть фильм".')
 @allure.description("")
 @allure.severity("Blocker")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_positive_button(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -128,7 +128,7 @@ def test_positive_button(browser):
     '"К сожалению, по вашему запросу ничего не найдено..."'
 )
 @allure.severity("Minor")
-# @pytest.mark.negative_test
+@pytest.mark.negative_test
 def test_search_only_spaces(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -155,7 +155,7 @@ def test_search_only_spaces(browser):
     '"К сожалению, по вашему запросу ничего не найдено..."'
 )
 @allure.severity("Minor")
-# @pytest.mark.negative_test
+@pytest.mark.negative_test
 def test_search_with_symbols_inside(browser):
     main_page = Main(browser)
     main_page.captcha()
@@ -180,7 +180,7 @@ def test_search_with_symbols_inside(browser):
     "отображенному названию в верхней плашке"
 )
 @allure.severity("Normal")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_search_movie_latin(browser):
     main_page = Main(browser)
     main_page.captcha()

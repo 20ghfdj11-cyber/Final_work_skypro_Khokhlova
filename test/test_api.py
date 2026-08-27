@@ -1,5 +1,6 @@
 import allure
 import requests
+import pytest
 
 apiKey = {"X-API-KEY": "5R07BXR-HXQ4F98-NWCK6RW-8Y4ETD7"}
 # "5R07BXR-HXQ4F98-NWCK6RW-8Y4ETD7" - мой ключ
@@ -11,7 +12,7 @@ base_url_api = 'https://api.kinopoisk.dev/v1.4'
 @allure.id('Kinopoisk_api_01')
 @allure.title("Поиск фильма по id. Позитивная проверка.")
 @allure.severity("Critical")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_search_by_id(id=""):
     id = "44168"
     with allure.step("Отправка запроса."):
@@ -30,7 +31,7 @@ def test_search_by_id(id=""):
 @allure.title("Поиск фильма по неверному id (вне диапазона)."
               "Негативная проверка.")
 @allure.severity("Normal")
-# @pytest.mark.negative_test
+@pytest.mark.negative_test
 def test_search_eror_id(id=""):
     id = "d1000000001"
     with allure.step("Отправка запроса."):
@@ -43,7 +44,7 @@ def test_search_eror_id(id=""):
 @allure.title("Поиск фильма по id без токена авторизации."
               "Негативная проверка.")
 @allure.severity("Normal")
-# @pytest.mark.negative_test
+@pytest.mark.negative_test
 def test_search_no_apiKey(id=""):
     id = "100"
     with allure.step("Отправка запроса."):
@@ -55,7 +56,7 @@ def test_search_no_apiKey(id=""):
 @allure.id('Kinopoisk_api_04')
 @allure.title("Поиск фильма по названию. Позитивная проверка.")
 @allure.severity("Critical")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_search_film_by_name(name_film=""):
     name_film = "Девчата"
     with allure.step("Отправка запроса."):
@@ -75,7 +76,7 @@ def test_search_film_by_name(name_film=""):
 @allure.id('Kinopoisk_api_04')
 @allure.title("Поиск фильмов по рейтингу и жанру. Позитивная проверка.")
 @allure.severity("Normal")
-# @pytest.mark.positive_test
+@pytest.mark.positive_test
 def test_rating():
     my_params = {
             'page': 10,
